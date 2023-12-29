@@ -203,11 +203,29 @@ void DeviousDevices::NodeHider::Update()
 
     LOG("NodeHider::Update() - Node hider updated")
     LOG("NodeHider::Update() - Removed actors...")
-    for (auto&& it : loc_removedactors) LOG("\t{}",it->GetName())
+    for (auto&& it : loc_removedactors) {
+        if (it == nullptr) {
+            LOG("\t nullptr")
+        } else {
+            LOG("\t{}", it->GetName())
+        }
+    }
     LOG("NodeHider::Update() - Same actors...")
-    for (auto&& it : loc_samectors) LOG("\t{}",it->GetName())
+    for (auto&& it : loc_samectors) {
+        if (it == nullptr) {
+            LOG("\t nullptr")
+        } else {
+            LOG("\t{}", it->GetName())
+        }
+    }
     LOG("NodeHider::Update() - Added actors...")
-    for (auto&& it : loc_addedactors) LOG("\t{}",it->GetName())
+    for (auto&& it : loc_addedactors) {
+        if (it == nullptr) {
+            LOG("\t nullptr")
+        } else {
+            LOG("\t{}", it->GetName())
+        }
+    }
 }
 
 void DeviousDevices::NodeHider::Reload()
